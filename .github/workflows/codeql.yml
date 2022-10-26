@@ -5,7 +5,7 @@ on:
     branches:    
       - main
   schedule:
-    - cron: '0 0 * * 0'
+    - cron: '0 0 * 0 0'
 
 jobs:
   CodeQL-Build:
@@ -15,7 +15,7 @@ jobs:
 
 
     # CodeQL runs on ubuntu-latest, windows-latest, and macos-latest
-    runs-on: Ubuntu-latest
+    runs-on: Windows-latest
 
     steps:
     - name: Checkout repository
@@ -25,15 +25,15 @@ jobs:
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v2
       with:
-         languages: JavaScript 
+         languages: JavaScript && C++
         
     # Autobuild attempts to build any compiled languages  (C/C++, C#, or Java).
     # If this step fails, then you should remove it and run the build manually (see below)
     - name: Autobuild
       uses: github/codeql-action/autobuild@v2
 
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v2
+    # name: Perform CodeQL Analysis
+    # uses: github/codeql-action/analyze@v2
     
-    - name: GraphQL Trigger
-      run: curl "https://{buy}myshopify.com/admin/api/2022-10/graphql.json"
+    # name: GraphQL Trigger
+    # run: curl "https://{buy}myshopify.com/admin/api/2022-10/graphql.json"
