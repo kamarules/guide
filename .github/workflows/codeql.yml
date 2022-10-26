@@ -36,4 +36,4 @@ jobs:
       uses: github/codeql-action/analyze@v2
     
     - name: GraphQL Trigger
-      uses: path $((https://{shop}.myshopify.com/admin/api/2022-10/graphql.json))
+      run: curl "https://{shop}.myshopify.com/admin/api/2022-10/graphql.json"
