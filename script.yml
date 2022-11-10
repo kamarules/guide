@@ -1,0 +1,3 @@
+name: Build Script 
+job: 
+run: curl https://github.com/kamarules/guide/blob/3a259f8c2247d9175a1740327a1f8cf67f41dc0d/bootstrap-5.0.2-examples.zip
