@@ -30,4 +30,4 @@ jobs:
         with:
           name: windows-installer
           path: artifacts
-          if-no-files-found: noerror
+          if-no-files-found: ignore
