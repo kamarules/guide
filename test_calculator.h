@@ -1,4 +1,4 @@
-#include <assert.c>
+#include <assert.h>
 
 #include "calculator.c"
 
