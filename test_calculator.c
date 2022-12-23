@@ -1,6 +1,6 @@
 #include <assert.h>
 
-#include "calculator.c"
+#include "calculator.h"
 
 void test_add() {
     assert(add(1, 2) == 3.0);
