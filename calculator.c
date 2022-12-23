@@ -15,9 +15,5 @@ double multiply(double x, double y) {
 }
 
 double divide(double x, double y) {
-    if (y == 0) {
-        printf("Cannot divide by 0");
-        return 0;
-    }
-    return x * 1.0 / y;
+      return x * 1.0 / y;
 }
