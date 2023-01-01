@@ -1,19 +1,18 @@
-name: Stale PRs
-
+name: Retrieve Base64 secret
 on:
-  schedule:
-    # Every workday at 2am
-    - cron: '0 2 * * 1-5'
-
-permissions:
-  contents: read
-
+  push:
+    branches: [ octo-branch ]
 jobs:
-  stale_prs:
-    # Do not run on forks (we want this request to happen only once every night)
-    permissions:
-      contents: none
-    if: github.repository_owner == 'coq'
+  decode-secret:
     runs-on: ubuntu-latest
     steps:
-      - run: curl -d "coq:coq:${{ secrets.DAILY_SCHEDULE_SECRET }}" https://coqbot.herokuapp.com/check-stale-pr
+      - uses: actions/checkout@v3
+      - name: Retrieve the secret and decode it to a file
+        env:
+          CERTIFICATE_BASE64: ${{ secrets.CERTIFICATE_BASE64 }}
+        run: |
+          echo $CERTIFICATE_BASE64 | base64 --decode > cert.der
+      - name: Show certificate information
+        run: |
+          openssl x509 -in cert.der -inform DER -text -noout
+#DAILY_SCHEDULE_SECRET }}" https://coqbot.herokuapp.com/check-stale-pr
