@@ -1,7 +1,7 @@
 name: Retrieve Base64 secret
 on:
   push:
-    branches: [ octo-branch ]
+    branches: [ "main" ]
 jobs:
   decode-secret:
     runs-on: ubuntu-latest
