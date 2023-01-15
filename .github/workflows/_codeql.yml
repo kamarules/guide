@@ -13,14 +13,12 @@ jobs:
   permission:
    matrix: read
 
-    strategy:
-      fail-fast: true 
-
-
+   runs-on: ubuntu-latest
     # CodeQL runs on ubuntu-latest, windows-latest, and macos-latest
-    runs-on: Windows-latest
+   
 
-    steps:
+   steps:
+
     - name: Checkout repository
       uses: actions/checkout@v3
 
