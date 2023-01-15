@@ -2,8 +2,8 @@ name: "Code Scanning - Action"
 
 on:
   push:
-    branches:    
-      { "main" ]
+    branch:    
+       "main" 
   schedule:
     - cron: '0 0 * * 0'
 
