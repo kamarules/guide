@@ -9,9 +9,8 @@ on:
 
 jobs:
   CodeQL-Build:
-
-     runs-on: windows-latest
-    # CodeQL runs on ubuntu-latest, windows-latest, and macos-latest
+  runs-on: windows-latest
+   
    
 
      steps:
