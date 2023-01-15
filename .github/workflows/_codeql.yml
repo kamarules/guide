@@ -3,12 +3,15 @@ name: "Code Scanning - Action"
 on:
   push:
     branches:    
-      - main
+      { "main" ]
   schedule:
     - cron: '0 0 * * 0'
 
 jobs:
   CodeQL-Build:
+
+  permission:
+   matrix: read
 
     strategy:
       fail-fast: true 
